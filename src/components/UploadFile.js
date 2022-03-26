@@ -29,7 +29,8 @@ const handleSubmission=()=>{
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-            alert("the file is submitted");//to change acord to data 
+            alert("the file is submitted");//to change acord to data             
+            // setSelectedFile();
 	};
 
   return (
