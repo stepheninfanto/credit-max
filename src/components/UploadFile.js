@@ -1,16 +1,16 @@
 import React,{useState} from 'react';
 import {Input,Button,Grid} from '@mui/material'
-import "./UploadFile";
+import {getCreditData} from '../api/service'
 
 function UploadFile() {
 
-    const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
 
 const changeHandler = (e) => {
 		setSelectedFile(e.target.files[0]);
 		setIsFilePicked(true);
-        console.log("file loaded ");
+    console.log("file loaded ");
 	};
 
 
@@ -18,18 +18,13 @@ const handleSubmission=()=>{
     const formData = new FormData();
 		formData.append('File', selectedFile);
         console.log(selectedFile);
-		fetch('http://127:4000/creditData',
-			{method: 'POST',
-			body: formData,
-			}
-		).then((response) => response.json())
-			.then((result) => {
-				console.log('Success:', result);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-            alert("the file is submitted");//to change acord to data             
+      var data=getCreditData(formData);	
+      if(data.error==null){
+        console.log(data.error);
+ 
+      }else{
+        alert("error");
+      }            // alert("the file is submitted");//to change acord to data             
             // setSelectedFile();
 	};
 
@@ -41,8 +36,6 @@ const handleSubmission=()=>{
             alignItems="center"
             justifyContent="center"
             style={{ minHeight: '100vh' }}>
-
-
        
         {isFilePicked ? (
         <div>

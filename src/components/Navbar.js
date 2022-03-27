@@ -11,12 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Dashboard from './Chart';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,Routes
-} from "react-router-dom";
+
 
 const pages = ['Home', 'dashboard'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -68,7 +63,7 @@ const ResponsiveAppBar = () => {
             LOGO
           </Typography>
          
-         {/* <Link to="/">Dashboard</Link> */}
+       
                 
         </Toolbar>
       </Container>
