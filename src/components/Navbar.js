@@ -16,13 +16,13 @@ import MenuItem from '@mui/material/MenuItem';
 const pages = ['Home', 'dashboard'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = () => {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleRoute = ({page}) => {
-    window.location.href ="./"+`${page} `;
-  };
+  // const handleRoute = ({page}) => {
+  //   window.location.href ="./"+`${page} `;
+  // };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -50,21 +50,9 @@ const ResponsiveAppBar = () => {
 
           {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" onClick={()=>handleRoute({page})}>{page}</Typography>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
- 
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
-         
-       
-                
+              ))} 
         </Toolbar>
       </Container>
     </AppBar>

@@ -99,23 +99,6 @@ export default function Chart({datasets}) {
 
 const labels =["EBIT_TotalAsset_Ratio","NetSales_TotalAsset_Ratio" ,"MarketValueEquity_TotalLiablility_Ratio",
 "WorkingCapital_TotalAsset_Ratio","RetainedEarning_TotalAsset_Ratio"  ]
-// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-//  const data = {
-//   labels,
-//   datasets: [
-//     {
-//       label: 'Dataset 1',
-      
-//       backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//     },
-//     {
-//       label: 'Dataset 2',
-//       data: labels.map(() =>),
-//       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-//     },
-//   ],
-// };
 
 
 
@@ -124,12 +107,14 @@ const labels =["EBIT_TotalAsset_Ratio","NetSales_TotalAsset_Ratio" ,"MarketValue
   datasets: [
     {
       label: 'Q1',
-       data: labels.map((e) =>WEIGHTS.PRIVATE[e]),
+      //  data: labels.map((e) =>WEIGHTS.PRIVATE[e]),
+       data: labels.map(() =>100),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Q2',
-      data: labels.map(() =>WEIGHTS.PUBLIC[e]),
+      // data: labels.map(() =>WEIGHTS.PUBLIC[e]),
+      data: labels.map(() =>100),
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],

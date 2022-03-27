@@ -21,6 +21,7 @@ const handleSubmission=()=>{
       var data=getCreditData(formData);	
       if(data.error==null){
         console.log(data.error);
+        alert("error happend ")
  
       }else{
         alert("error");
